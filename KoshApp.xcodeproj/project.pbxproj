@@ -20,6 +20,8 @@
 		0075083F2723460B004FA4D2 /* A.wav in Resources */ = {isa = PBXBuildFile; fileRef = 007508382723460A004FA4D2 /* A.wav */; };
 		007508402723460B004FA4D2 /* B.wav in Resources */ = {isa = PBXBuildFile; fileRef = 007508392723460B004FA4D2 /* B.wav */; };
 		007508412723460B004FA4D2 /* F.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0075083A2723460B004FA4D2 /* F.wav */; };
+		0075085427243526004FA4D2 /* blue-button-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0075085227243526004FA4D2 /* blue-button-1.png */; };
+		0075085527243526004FA4D2 /* blue-button-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0075085327243526004FA4D2 /* blue-button-2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		007508382723460A004FA4D2 /* A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = A.wav; sourceTree = "<group>"; };
 		007508392723460B004FA4D2 /* B.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = B.wav; sourceTree = "<group>"; };
 		0075083A2723460B004FA4D2 /* F.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = F.wav; sourceTree = "<group>"; };
+		0075085227243526004FA4D2 /* blue-button-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blue-button-1.png"; path = "images/blue-button-1.png"; sourceTree = "<group>"; };
+		0075085327243526004FA4D2 /* blue-button-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blue-button-2.png"; path = "images/blue-button-2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		00580F2E2703333C007F5080 = {
 			isa = PBXGroup;
 			children = (
+				0075084527243389004FA4D2 /* Images */,
 				0075084227234722004FA4D2 /* Sounds */,
 				00580F392703333D007F5080 /* KoshApp */,
 				00580F382703333D007F5080 /* Products */,
@@ -94,6 +99,15 @@
 				007508362723460A004FA4D2 /* G.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		0075084527243389004FA4D2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0075085227243526004FA4D2 /* blue-button-1.png */,
+				0075085327243526004FA4D2 /* blue-button-2.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,8 +168,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				00580F4727033340007F5080 /* LaunchScreen.storyboard in Resources */,
+				0075085427243526004FA4D2 /* blue-button-1.png in Resources */,
 				0075083D2723460B004FA4D2 /* G.wav in Resources */,
 				007508412723460B004FA4D2 /* F.wav in Resources */,
+				0075085527243526004FA4D2 /* blue-button-2.png in Resources */,
 				0075083B2723460B004FA4D2 /* C.wav in Resources */,
 				007508402723460B004FA4D2 /* B.wav in Resources */,
 				0075083F2723460B004FA4D2 /* A.wav in Resources */,

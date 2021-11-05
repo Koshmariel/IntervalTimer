@@ -9,20 +9,24 @@ import UIKit
 import AVFoundation //play sounds
 
 class ViewController: UIViewController {
-    
-    var player: AVAudioPlayer!
-    
-    
-
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //        // Do any additional setup after loading the view.
 //    }
+    
+    var player: AVAudioPlayer!
+    var timer = Timer()
+    var secondsRemaining = 10
 
-
+    @IBOutlet weak var timerLabel: UILabel!
+    
     @IBAction func startPressed(_ sender: UIButton) {
+        secondsRemaining = 10
         print("START pressed")
         playSound(fileName: "C")
+        timer.invalidate()
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo:nil, repeats: true)
     }
     
     func playSound(fileName: String) {
@@ -30,6 +34,19 @@ class ViewController: UIViewController {
         player = try! AVAudioPlayer(contentsOf: url!)
         player.play()
         print("\(fileName) played")
+    }
+    
+    @objc func updateTimer() {
+        if secondsRemaining >= 0 {
+            print("\(secondsRemaining) seconds remaining.")
+            timerLabel.text = "\(secondsRemaining)"
+            secondsRemaining -= 1
+        } else {
+            timer.invalidate()
+            timerLabel.text = "DONE"
+            playSound(fileName: "E")
+        }
+        
     }
     
     /*

@@ -16,15 +16,22 @@ class ViewController: UIViewController {
     
     var player: AVAudioPlayer!
     var timer = Timer()
+    var totalTime = 10
     var secondsRemaining = 10
+    var secondsPassed = 0
 
     @IBOutlet weak var timerLabel: UILabel!
     
+    
+    @IBOutlet weak var progressBar: UIProgressView!
+    
     @IBAction func startPressed(_ sender: UIButton) {
-        secondsRemaining = 10
+        secondsRemaining = totalTime
+        secondsPassed = 0
         print("START pressed")
         playSound(fileName: "C")
         timer.invalidate()
+        progressBar.progress = 0.0
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo:nil, repeats: true)
     }
@@ -41,6 +48,9 @@ class ViewController: UIViewController {
             print("\(secondsRemaining) seconds remaining.")
             timerLabel.text = "\(secondsRemaining)"
             secondsRemaining -= 1
+            secondsPassed += 1
+            let percentageProgress = Float(secondsPassed) / Float(totalTime)
+            progressBar.progress = percentageProgress
         } else {
             timer.invalidate()
             timerLabel.text = "DONE"

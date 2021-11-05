@@ -47,23 +47,49 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N5M-ch-RdZ" userLabel="MiddleView">
                                         <rect key="frame" x="0.0" y="273.5" width="414" height="271"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Nyj-cs-XSw">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nyj-cs-XSw">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="271"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3F-zd-h4a">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbL-5Q-A85">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="135.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="POs-my-bDl">
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3F-zd-h4a">
+                                                                <rect key="frame" x="170" y="89.5" width="74" height="36"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="I3F-zd-h4a" firstAttribute="centerX" secondItem="gbL-5Q-A85" secondAttribute="centerX" id="IVS-E5-UTk"/>
+                                                            <constraint firstAttribute="bottom" secondItem="I3F-zd-h4a" secondAttribute="bottom" constant="10" id="vOV-tw-DjS"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJV-BH-RJP">
                                                         <rect key="frame" x="0.0" y="135.5" width="414" height="135.5"/>
-                                                    </progressView>
+                                                        <subviews>
+                                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="POs-my-bDl">
+                                                                <rect key="frame" x="10" y="10" width="394" height="11"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="10" id="uBY-hg-a3s"/>
+                                                                </constraints>
+                                                            </progressView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="POs-my-bDl" firstAttribute="centerX" secondItem="oJV-BH-RJP" secondAttribute="centerX" id="NMg-h0-499"/>
+                                                            <constraint firstAttribute="trailing" secondItem="POs-my-bDl" secondAttribute="trailing" constant="10" id="Vb9-Od-93v"/>
+                                                            <constraint firstItem="POs-my-bDl" firstAttribute="top" secondItem="oJV-BH-RJP" secondAttribute="top" constant="10" id="cgT-rU-g5w"/>
+                                                            <constraint firstItem="POs-my-bDl" firstAttribute="leading" secondItem="oJV-BH-RJP" secondAttribute="leading" constant="10" id="lK6-iN-AI6"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="POs-my-bDl" firstAttribute="centerX" secondItem="Nyj-cs-XSw" secondAttribute="centerX" id="0Iq-6t-RLl"/>
-                                                    <constraint firstItem="POs-my-bDl" firstAttribute="leading" secondItem="Nyj-cs-XSw" secondAttribute="leading" constant="10" id="8xk-rd-gJV"/>
-                                                    <constraint firstAttribute="trailing" secondItem="POs-my-bDl" secondAttribute="trailing" constant="10" id="GjP-ME-B1s"/>
+                                                    <constraint firstAttribute="trailing" secondItem="oJV-BH-RJP" secondAttribute="trailing" id="gJ7-rI-0av"/>
+                                                    <constraint firstItem="gbL-5Q-A85" firstAttribute="leading" secondItem="Nyj-cs-XSw" secondAttribute="leading" id="gfq-Vo-OXs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gbL-5Q-A85" secondAttribute="trailing" id="tul-d5-Jt1"/>
+                                                    <constraint firstItem="oJV-BH-RJP" firstAttribute="leading" secondItem="Nyj-cs-XSw" secondAttribute="leading" id="zj5-WD-rhc"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -128,6 +154,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressBar" destination="POs-my-bDl" id="9Py-s8-kxk"/>
                         <outlet property="timerLabel" destination="I3F-zd-h4a" id="w7k-pR-vv2"/>
                     </connections>
                 </viewController>

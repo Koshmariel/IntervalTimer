@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation //play sounds
 
-class ViewController: UIViewController {
+class TimerViewController: UIViewController {
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
 //        // Do any additional setup after loading the view.
@@ -37,6 +37,10 @@ class ViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: timerStep, target: self, selector: #selector(updateTimer), userInfo:nil, repeats: true)
     }
     
+    @IBAction func editTimerButtinPresed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToEditTimer", sender: self)
+    }
+    
     func playSound(fileName: String) {
         let url = Bundle.main.url(forResource: fileName, withExtension: "wav")
         player = try! AVAudioPlayer(contentsOf: url!)
@@ -59,6 +63,15 @@ class ViewController: UIViewController {
             timerLabel.text = "DONE"
             playSound(fileName: "E")
         }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToEditTimer" {
+            let destinationVC = segue.destination as! EditTimerViewController
+            destinationVC.duration = 25
+        }
+        
         
     }
     

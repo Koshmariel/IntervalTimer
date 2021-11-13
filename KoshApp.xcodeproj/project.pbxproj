@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		00580F3B2703333D007F5080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00580F3A2703333D007F5080 /* AppDelegate.swift */; };
 		00580F3D2703333D007F5080 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00580F3C2703333D007F5080 /* SceneDelegate.swift */; };
-		00580F3F2703333D007F5080 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00580F3E2703333D007F5080 /* ViewController.swift */; };
+		00580F3F2703333D007F5080 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00580F3E2703333D007F5080 /* TimerViewController.swift */; };
 		00580F422703333D007F5080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00580F402703333D007F5080 /* Main.storyboard */; };
 		00580F4427033340007F5080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00580F4327033340007F5080 /* Assets.xcassets */; };
 		00580F4727033340007F5080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00580F4527033340007F5080 /* LaunchScreen.storyboard */; };
@@ -22,13 +22,14 @@
 		007508412723460B004FA4D2 /* F.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0075083A2723460B004FA4D2 /* F.wav */; };
 		0075085427243526004FA4D2 /* blue-button-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0075085227243526004FA4D2 /* blue-button-1.png */; };
 		0075085527243526004FA4D2 /* blue-button-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0075085327243526004FA4D2 /* blue-button-2.png */; };
+		00E51B5C273DB43D0057A939 /* EditTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E51B5B273DB43D0057A939 /* EditTimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		00580F372703333D007F5080 /* KoshApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoshApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00580F3A2703333D007F5080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00580F3C2703333D007F5080 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		00580F3E2703333D007F5080 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		00580F3E2703333D007F5080 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		00580F412703333D007F5080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00580F4327033340007F5080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00580F4627033340007F5080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +43,7 @@
 		0075083A2723460B004FA4D2 /* F.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = F.wav; sourceTree = "<group>"; };
 		0075085227243526004FA4D2 /* blue-button-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blue-button-1.png"; path = "images/blue-button-1.png"; sourceTree = "<group>"; };
 		0075085327243526004FA4D2 /* blue-button-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blue-button-2.png"; path = "images/blue-button-2.png"; sourceTree = "<group>"; };
+		00E51B5B273DB43D0057A939 /* EditTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +80,9 @@
 			children = (
 				00580F3A2703333D007F5080 /* AppDelegate.swift */,
 				00580F3C2703333D007F5080 /* SceneDelegate.swift */,
-				00580F3E2703333D007F5080 /* ViewController.swift */,
-				00580F402703333D007F5080 /* Main.storyboard */,
+				00E51B41273AFEC30057A939 /* Controller */,
+				00E51B40273AFEB00057A939 /* View */,
 				00580F4327033340007F5080 /* Assets.xcassets */,
-				00580F4527033340007F5080 /* LaunchScreen.storyboard */,
 				00580F4827033340007F5080 /* Info.plist */,
 			);
 			path = KoshApp;
@@ -108,6 +109,24 @@
 				0075085327243526004FA4D2 /* blue-button-2.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		00E51B40273AFEB00057A939 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00580F402703333D007F5080 /* Main.storyboard */,
+				00580F4527033340007F5080 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		00E51B41273AFEC30057A939 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				00580F3E2703333D007F5080 /* TimerViewController.swift */,
+				00E51B5B273DB43D0057A939 /* EditTimerViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,8 +208,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00580F3F2703333D007F5080 /* ViewController.swift in Sources */,
+				00580F3F2703333D007F5080 /* TimerViewController.swift in Sources */,
 				00580F3B2703333D007F5080 /* AppDelegate.swift in Sources */,
+				00E51B5C273DB43D0057A939 /* EditTimerViewController.swift in Sources */,
 				00580F3D2703333D007F5080 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

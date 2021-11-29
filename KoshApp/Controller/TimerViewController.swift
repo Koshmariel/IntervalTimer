@@ -9,36 +9,53 @@ import UIKit
 import AVFoundation //play sounds
 
 class TimerViewController: UIViewController {
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        // Do any additional setup after loading the view.
-//    }
+    
+    var myTimer = TimerModel()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        timerName.text = myTimer.timerName
+        timerLabel.text = String(Int(myTimer.totalTime))
+        progressBar.progress = 0.0
+        print("timerLabel.accessibilityIdentifier = \(timerLabel.accessibilityIdentifier)")
+        print("timerLabel.accessibilityLabel = \(timerLabel.accessibilityLabel)")
+    }
     
     var player: AVAudioPlayer!
-    var timer = Timer()
-    var totalTime = 10.0
-    var secondsRemaining = 10.0
-    var secondsPassed = 0.0
-    let timerStep = 0.1
 
+    var timer = Timer()
+//    var totalTime = 6.0
+//    var secondsRemaining = 10.0
+//    var secondsPassed = 0.0
+//    let timerStep = 0.1
+
+    @IBOutlet weak var timerName: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
-    
     
     @IBOutlet weak var progressBar: UIProgressView!
     
     @IBAction func startPressed(_ sender: UIButton) {
-        secondsRemaining = totalTime
-        secondsPassed = 0.0
+        myTimer.secondsRemaining = myTimer.totalTime
+        myTimer.secondsPassed = 0.0
         print("START pressed")
+        print("totalTime = \(myTimer.totalTime)")
         playSound(fileName: "C")
         timer.invalidate()
         progressBar.progress = 0.0
         
-        timer = Timer.scheduledTimer(timeInterval: timerStep, target: self, selector: #selector(updateTimer), userInfo:nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: myTimer.timerStep, target: self, selector: #selector(updateTimer), userInfo:nil, repeats: true)
     }
     
     @IBAction func editTimerButtinPresed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToEditTimer", sender: self)
+        
+//        let editTimer = EditTimerViewController()
+//        editTimer.completion = { [weak self] duration in
+//            DispatchQueue.main.async {
+//                self?.totalTime = Double(duration!)
+//                print("editTimer completed, totalTime now is \(self?.totalTime)")
+//            }
+//        }
     }
     
     func playSound(fileName: String) {
@@ -49,13 +66,13 @@ class TimerViewController: UIViewController {
     }
     
     @objc func updateTimer() {
-        if secondsRemaining >= 0 {
-            print("\(secondsRemaining) seconds remaining.")
-            timerLabel.text = "\(Int(secondsRemaining.rounded()))"
-            print("\(Int(secondsRemaining.rounded())) in label.")
-            secondsRemaining -= timerStep
-            secondsPassed += timerStep
-            let percentageProgress = secondsPassed / totalTime
+        if myTimer.secondsRemaining >= 0 {
+            print("\(myTimer.secondsRemaining) seconds remaining.")
+            timerLabel.text = "\(Int(myTimer.secondsRemaining.rounded()))"
+            print("\(Int(myTimer.secondsRemaining.rounded())) in label.")
+            myTimer.secondsRemaining -= myTimer.timerStep
+            myTimer.secondsPassed += myTimer.timerStep
+            let percentageProgress = myTimer.secondsPassed / myTimer.totalTime
             progressBar.progress = Float(percentageProgress)
             print("\(Float(percentageProgress)) in progress bar")
         } else {
@@ -69,10 +86,19 @@ class TimerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToEditTimer" {
             let destinationVC = segue.destination as! EditTimerViewController
-            destinationVC.duration = 25
+            destinationVC.duration = Int(myTimer.totalTime)
+            destinationVC.timerName = myTimer.timerName
+            print("Pasing duration = \(myTimer.totalTime) to Edit screen")
+            destinationVC.completion = { [weak self] duration in
+                        DispatchQueue.main.async {
+                            self?.myTimer.totalTime = Double(duration!)
+                            //self?.myTimer.timerName = String(timerName)
+                            print("editTimer completed, totalTime now is \(self?.myTimer.totalTime)")
+                            self?.timerLabel.text = String(duration!)
+                            self?.timer.invalidate()
+                        }
+            }
         }
-        
-        
     }
     
     /*

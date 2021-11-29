@@ -7,31 +7,56 @@
 
 import UIKit
 
-let maxDuration = 60
 
-
-class EditTimerViewController: UIViewController {
+class EditTimerViewController: UIViewController, UITextFieldDelegate {
+                                               
+    let maxDuration = 60
+    var duration: Int? //timer duraton is passed from Timer
+    var timerName: String?
     
-    var duration: Int?
-    //duration2 = duration!
-
+    public var completion: ((Int?) -> Void)?
+    
+    
+ 
+    
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var durationSlider: UISlider!
+    @IBOutlet weak var timerNameField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //timerNameField.placeholder = timerName
+        timerNameField.text = timerName
         durationSlider.minimumValue = 0
         durationSlider.maximumValue = Float(maxDuration)
         durationSlider.value = Float(duration!)
-        
         durationLabel.text = String(duration!) + "s"
-        // set your startValue here
-        // Do any additional setup after loading the view.
+        
+        timerNameField.delegate = self                                                 //Hide Keyboard In Swift On Pressing Return Key
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))   //Dismiss Keyboard When Clicking On Background
+        view.addGestureRecognizer(tap) // Add gesture recognizer to background view    //Dismiss Keyboard When Clicking On Background
         }
     
+    @objc func handleTap() {                                                           //Dismiss Keyboard When Clicking On Background
+        timerNameField.resignFirstResponder() // dismiss keyoard
+        }
 
-    
-    
-    @IBOutlet weak var durationLabel: UILabel!
-    
-    @IBOutlet weak var durationSlider: UISlider!
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {                     //Hide Keyboard In Swift On Pressing Return Key
+        //timerNameField.endEditing(true)
+        textField.endEditing(true)
+        print("timerName is set to \(timerNameField.text), closing keyboard")
+        return true
+    }
+
+
+    /*
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        timerNameField.endEditing(true)
+        print("timerName is set to \(timerNameField.text), closing keyboard")
+        return true
+    }
+ */
     
     @IBAction func durationSliderChanged(_ sender: UISlider) {
         duration = Int(sender.value)
@@ -40,19 +65,16 @@ class EditTimerViewController: UIViewController {
     }
     
     @IBAction func cancelPressed(_ sender: UIButton) {
+        print("Cancel pressed, dismissing Edit screen")
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func savePressed(_ sender: UIButton) {
-    }
-    /*
-    // MARK: - Navigation
+        print("Save pressed, duration is \(duration!)")
+        timerName = timerNameField.text
+        print("timerName is set to \(timerNameField.text)")
+        completion?(duration!)
+        self.dismiss(animated: true, completion: nil)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
 }

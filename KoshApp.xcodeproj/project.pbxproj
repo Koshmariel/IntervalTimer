@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0050A9202754FDCC007C9F0C /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0050A91F2754FDCC007C9F0C /* TimerModel.swift */; };
 		00580F3B2703333D007F5080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00580F3A2703333D007F5080 /* AppDelegate.swift */; };
 		00580F3D2703333D007F5080 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00580F3C2703333D007F5080 /* SceneDelegate.swift */; };
 		00580F3F2703333D007F5080 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00580F3E2703333D007F5080 /* TimerViewController.swift */; };
@@ -22,10 +23,23 @@
 		007508412723460B004FA4D2 /* F.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0075083A2723460B004FA4D2 /* F.wav */; };
 		0075085427243526004FA4D2 /* blue-button-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0075085227243526004FA4D2 /* blue-button-1.png */; };
 		0075085527243526004FA4D2 /* blue-button-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 0075085327243526004FA4D2 /* blue-button-2.png */; };
+		0083157E27454F60009F1347 /* KoshAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0083157D27454F60009F1347 /* KoshAppUITests.swift */; };
+		0092E244274AED4900F12EFE /* SelectTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0092E243274AED4900F12EFE /* SelectTimerViewController.swift */; };
 		00E51B5C273DB43D0057A939 /* EditTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E51B5B273DB43D0057A939 /* EditTimerViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0083158027454F60009F1347 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00580F2F2703333C007F5080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00580F362703333D007F5080;
+			remoteInfo = KoshApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0050A91F2754FDCC007C9F0C /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		00580F372703333D007F5080 /* KoshApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoshApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00580F3A2703333D007F5080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00580F3C2703333D007F5080 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +57,10 @@
 		0075083A2723460B004FA4D2 /* F.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = F.wav; sourceTree = "<group>"; };
 		0075085227243526004FA4D2 /* blue-button-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blue-button-1.png"; path = "images/blue-button-1.png"; sourceTree = "<group>"; };
 		0075085327243526004FA4D2 /* blue-button-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blue-button-2.png"; path = "images/blue-button-2.png"; sourceTree = "<group>"; };
+		0083157B27454F60009F1347 /* KoshAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoshAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0083157D27454F60009F1347 /* KoshAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoshAppUITests.swift; sourceTree = "<group>"; };
+		0083157F27454F60009F1347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0092E243274AED4900F12EFE /* SelectTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimerViewController.swift; sourceTree = "<group>"; };
 		00E51B5B273DB43D0057A939 /* EditTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,15 +72,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0083157827454F60009F1347 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0050A91E2754FDB9007C9F0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0050A91F2754FDCC007C9F0C /* TimerModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		00580F2E2703333C007F5080 = {
 			isa = PBXGroup;
 			children = (
+				00580F3A2703333D007F5080 /* AppDelegate.swift */,
+				00580F3C2703333D007F5080 /* SceneDelegate.swift */,
 				0075084527243389004FA4D2 /* Images */,
 				0075084227234722004FA4D2 /* Sounds */,
 				00580F392703333D007F5080 /* KoshApp */,
+				0083157C27454F60009F1347 /* KoshAppUITests */,
 				00580F382703333D007F5080 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				00580F372703333D007F5080 /* KoshApp.app */,
+				0083157B27454F60009F1347 /* KoshAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,8 +115,7 @@
 		00580F392703333D007F5080 /* KoshApp */ = {
 			isa = PBXGroup;
 			children = (
-				00580F3A2703333D007F5080 /* AppDelegate.swift */,
-				00580F3C2703333D007F5080 /* SceneDelegate.swift */,
+				0050A91E2754FDB9007C9F0C /* Model */,
 				00E51B41273AFEC30057A939 /* Controller */,
 				00E51B40273AFEB00057A939 /* View */,
 				00580F4327033340007F5080 /* Assets.xcassets */,
@@ -111,6 +147,15 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		0083157C27454F60009F1347 /* KoshAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0083157D27454F60009F1347 /* KoshAppUITests.swift */,
+				0083157F27454F60009F1347 /* Info.plist */,
+			);
+			path = KoshAppUITests;
+			sourceTree = "<group>";
+		};
 		00E51B40273AFEB00057A939 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +170,7 @@
 			children = (
 				00580F3E2703333D007F5080 /* TimerViewController.swift */,
 				00E51B5B273DB43D0057A939 /* EditTimerViewController.swift */,
+				0092E243274AED4900F12EFE /* SelectTimerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -149,6 +195,24 @@
 			productReference = 00580F372703333D007F5080 /* KoshApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0083157A27454F60009F1347 /* KoshAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0083158427454F60009F1347 /* Build configuration list for PBXNativeTarget "KoshAppUITests" */;
+			buildPhases = (
+				0083157727454F60009F1347 /* Sources */,
+				0083157827454F60009F1347 /* Frameworks */,
+				0083157927454F60009F1347 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0083158127454F60009F1347 /* PBXTargetDependency */,
+			);
+			name = KoshAppUITests;
+			productName = KoshAppUITests;
+			productReference = 0083157B27454F60009F1347 /* KoshAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -160,6 +224,10 @@
 				TargetAttributes = {
 					00580F362703333D007F5080 = {
 						CreatedOnToolsVersion = 12.5.1;
+					};
+					0083157A27454F60009F1347 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 00580F362703333D007F5080;
 					};
 				};
 			};
@@ -177,6 +245,7 @@
 			projectRoot = "";
 			targets = (
 				00580F362703333D007F5080 /* KoshApp */,
+				0083157A27454F60009F1347 /* KoshAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -201,6 +270,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0083157927454F60009F1347 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -210,12 +286,30 @@
 			files = (
 				00580F3F2703333D007F5080 /* TimerViewController.swift in Sources */,
 				00580F3B2703333D007F5080 /* AppDelegate.swift in Sources */,
+				0092E244274AED4900F12EFE /* SelectTimerViewController.swift in Sources */,
+				0050A9202754FDCC007C9F0C /* TimerModel.swift in Sources */,
 				00E51B5C273DB43D0057A939 /* EditTimerViewController.swift in Sources */,
 				00580F3D2703333D007F5080 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0083157727454F60009F1347 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0083157E27454F60009F1347 /* KoshAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0083158127454F60009F1347 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00580F362703333D007F5080 /* KoshApp */;
+			targetProxy = 0083158027454F60009F1347 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		00580F402703333D007F5080 /* Main.storyboard */ = {
@@ -395,6 +489,46 @@
 			};
 			name = Release;
 		};
+		0083158227454F60009F1347 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8X4L2LC8K;
+				INFOPLIST_FILE = KoshAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Drinkit.test.UI.KoshAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KoshApp;
+			};
+			name = Debug;
+		};
+		0083158327454F60009F1347 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W8X4L2LC8K;
+				INFOPLIST_FILE = KoshAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Drinkit.test.UI.KoshAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KoshApp;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -412,6 +546,15 @@
 			buildConfigurations = (
 				00580F4C27033340007F5080 /* Debug */,
 				00580F4D27033340007F5080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0083158427454F60009F1347 /* Build configuration list for PBXNativeTarget "KoshAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0083158227454F60009F1347 /* Debug */,
+				0083158327454F60009F1347 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

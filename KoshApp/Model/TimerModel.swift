@@ -12,5 +12,5 @@ struct TimerModel {
     var secondsRemaining = 10.0
     var secondsPassed = 0.0
     let timerStep = 0.1
-    var timerName = "IntervalTimer"
+    var timerName: String? = "IntervalTimer"
 }

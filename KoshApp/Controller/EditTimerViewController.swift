@@ -11,11 +11,11 @@ import UIKit
 class EditTimerViewController: UIViewController, UITextFieldDelegate {
                                                
     let maxDuration = 60
-    var duration: Int? //timer duraton is passed from Timer
+    var duration: Int? //timer duration is passed from Timer
     var timerName: String?
     
-    public var completion: ((Int?) -> Void)?
-    
+    //public var completion: ((Int?) -> Void)?
+    public var completion: (((duration: Int?, name: String?)) -> Void)?
     
  
     
@@ -72,8 +72,9 @@ class EditTimerViewController: UIViewController, UITextFieldDelegate {
     @IBAction func savePressed(_ sender: UIButton) {
         print("Save pressed, duration is \(duration!)")
         timerName = timerNameField.text
-        print("timerName is set to \(timerNameField.text)")
-        completion?(duration!)
+        print("timerName is set to \(timerName)")
+        let timerData = (duration: duration, name: timerName)
+        completion?(timerData)
         self.dismiss(animated: true, completion: nil)
 
     }

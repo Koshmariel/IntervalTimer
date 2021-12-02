@@ -46,7 +46,7 @@ class TimerViewController: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: myTimer.timerStep, target: self, selector: #selector(updateTimer), userInfo:nil, repeats: true)
     }
     
-    @IBAction func editTimerButtinPresed(_ sender: UIButton) {
+    @IBAction func editTimerButtonPresed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToEditTimer", sender: self)
         
 //        let editTimer = EditTimerViewController()
@@ -88,13 +88,16 @@ class TimerViewController: UIViewController {
             let destinationVC = segue.destination as! EditTimerViewController
             destinationVC.duration = Int(myTimer.totalTime)
             destinationVC.timerName = myTimer.timerName
-            print("Pasing duration = \(myTimer.totalTime) to Edit screen")
-            destinationVC.completion = { [weak self] duration in
+            print("Passing duration = \(myTimer.totalTime) to Edit screen")
+            
+            destinationVC.completion = { [weak self] timerData in //if I check timerData it is described as Declaration let timerData: Int? Declared In TimerViewController.swift
                         DispatchQueue.main.async {
-                            self?.myTimer.totalTime = Double(duration!)
+                            self?.myTimer.totalTime = Double(timerData.duration!) //ERROR  Argument passed to call that takes no arguments + ERROR Value of type 'Int?' has no member 'duration'
                             //self?.myTimer.timerName = String(timerName)
+                            self?.timerLabel.text = String(timerData.duration!)  //ERROR  Argument passed to call that takes no arguments + ERROR Value of type 'Int?' has no member 'duration'
+                            self?.myTimer.timerName = timerData.name
+                            self?.timerName.text = timerData.name
                             print("editTimer completed, totalTime now is \(self?.myTimer.totalTime)")
-                            self?.timerLabel.text = String(duration!)
                             self?.timer.invalidate()
                         }
             }
